@@ -4,86 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rotoscoping Progress | Dean</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
-                    colors: {
-                        brand: {
-                            dark: '#0B0E14',
-                            teal: '#1CE5E5',
-                            green: '#D2F388'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { background-color: #0B0E14; color: #E2E8F0; z-index: 0; }
-        .glass-nav {
-            background: rgba(11, 14, 20, 0.7);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .glass-container {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
-        }
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 0.5rem;
-            border: 1px solid rgba(28, 229, 229, 0.2);
-            box-shadow: 0 0 30px rgba(28, 229, 229, 0.1);
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-        }
-    </style>
+    
+    <script src="tailwind-theme.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src="navbar.js" defer></script>
 </head>
-<body class="antialiased relative min-h-screen flex flex-col font-sans">
-
-    <nav class="glass-nav fixed w-full top-0 z-50">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold tracking-wider text-white flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-brand-teal"></span>
-                DEAN<span class="text-brand-teal">.</span>
-            </a>
-            <div class="space-x-8 text-sm font-semibold tracking-wide">
-                <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
-                <a href="rotoscoping.html" class="text-brand-teal transition-colors">Rotoscoping</a>
-            </div>
-        </div>
-    </nav>
+<body class="antialiased relative min-h-screen flex flex-col overflow-x-hidden font-sans">
+    
+    <portfolio-nav></portfolio-nav>
 
     <main class="flex-grow pt-32 pb-20 px-6">
-        <div class="max-w-5xl mx-auto">
+        <div class="max-w-4xl mx-auto">
             
-            <div class="mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Rotoscoping <span class="text-brand-teal">Progress</span></h2>
-                <p class="text-gray-400 font-light max-w-2xl">
-                    The initial stage of the project. Below is the raw video reference that will serve as the foundation for the upcoming frame-by-frame rotoscoping workload.
+            <div class="mb-12 text-center">
+                <div class="inline-flex items-center gap-3 mb-4">
+                    <span class="w-6 h-[1px] bg-brand-accent"></span>
+                    <span class="text-brand-accent text-xs font-bold uppercase tracking-widest">Phase 1</span>
+                    <span class="w-6 h-[1px] bg-brand-accent"></span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-brand-ink mb-4 tracking-tight">Rotoscoping <span class="italic font-light text-gray-500">Progress.</span></h2>
+                <p class="text-gray-600 font-light max-w-2xl mx-auto leading-relaxed">
+                    The raw video reference serving as the foundation for the upcoming frame-by-frame authoring workload.
                 </p>
             </div>
 
-            <div class="glass-container p-4 md:p-8 rounded-2xl">
+            <div class="premium-card p-4 md:p-8">
                 <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-xl font-semibold text-white">Reference Footage</h3>
-                    <span class="px-3 py-1 bg-brand-teal/10 text-brand-teal text-xs font-bold rounded uppercase tracking-wider">Phase 1</span>
+                    <h3 class="text-lg font-bold text-brand-ink tracking-wide">Reference Footage</h3>
+                    <span class="px-3 py-1 bg-brand-accent/10 text-brand-accent text-xs font-bold rounded uppercase tracking-widest">Source</span>
                 </div>
                 
                 <div class="video-wrapper">
                     <iframe 
-                        src="https://www.youtube.com/embed/VIDEO_ID" 
+                        src="https://www.youtube.com/embed/Nj-bAlQWs1I" 
                         title="YouTube video player" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
