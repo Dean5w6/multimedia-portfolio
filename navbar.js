@@ -3,7 +3,7 @@ class PortfolioNav extends HTMLElement {
         this.innerHTML = `
             <nav class="glass-nav fixed w-full top-0 z-50">
                 <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-                    <a href="index.html" class="text-xl font-bold tracking-widest text-brand-ink flex items-center gap-2 translate-x-[-20px]">
+                    <a href="index.html" class="text-xl font-bold tracking-widest text-brand-ink flex items-center gap-2">
                         DEAN<span class="text-brand-accent">.</span>
                     </a>
                     <div class="space-x-8 text-sm font-medium tracking-wide">
