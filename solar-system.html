@@ -34,13 +34,13 @@
 
             <div class="premium-card p-2 md:p-4 mb-16">
                 <div class="video-wrapper">
-                    <iframe 
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                        title="Solar System Full Render" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                    <video 
+                        class="absolute inset-0 w-full h-full rounded" 
+                        controls 
+                        preload="metadata" 
+                        poster="https://i.imgur.com/9N3oVpy.png"> <source src="https://i.imgur.com/8N3oVpy.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
 
@@ -61,23 +61,77 @@
 
             <div class="premium-card p-8 md:p-12 mb-20 bg-brand-paper/50">
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-brand-ink mb-3">Planetary Age Calculator</h2>
-                    <p class="text-gray-600">Enter your Earth age to calculate your orbital age across the solar system.</p>
+                    <h2 class="text-3xl font-bold text-brand-ink mb-3">Planetary Data Calculator</h2>
+                    <p class="text-gray-600">Enter your Earth age to calculate your orbital age and core physical parameters across the solar system.</p>
                 </div>
                 
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10">
                     <input type="number" id="earthAgeInput" placeholder="Enter age in years..." class="px-6 py-3 w-full sm:w-64 border border-brand-border rounded focus:outline-none focus:border-brand-accent bg-white shadow-inner text-brand-ink">
                     <button onclick="calculatePlanetaryAge()" class="w-full sm:w-auto px-8 py-3 bg-brand-ink text-white font-medium rounded hover:bg-brand-accent transition-colors shadow-lg">
-                        Calculate Age
+                        Calculate Data
                     </button>
                 </div>
 
-                <div id="resultsGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4 hidden">
+                <div id="resultsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
                     </div>
             </div>
 
             <div class="mb-12 border-b border-brand-border pb-4">
                 <h2 class="text-3xl font-bold text-brand-ink">Celestial <span class="italic font-light text-gray-500">Bodies.</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mb-16">
+                <div class="lg:col-span-2 premium-card p-2">
+                    <div class="aspect-square relative overflow-hidden rounded bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1614314169000-4cf229a1db33?q=80&w=1000&auto=format&fit=crop" alt="Mercury Render" class="object-cover w-full h-full grayscale opacity-80 mix-blend-multiply">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-xs font-bold tracking-widest text-brand-ink uppercase bg-white/80 px-3 py-1 rounded">Render Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="inline-flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 rounded-full bg-gray-400"></span>
+                        <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">Terrestrial Planet</span>
+                    </div>
+                    <h3 class="text-4xl font-bold text-brand-ink mb-4">Mercury</h3>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6">
+                        The smallest planet in the Solar System and the closest to the Sun. Its proximity requires a heavily scripted orbital velocity calculation within the simulation to maintain astronomical accuracy.
+                    </p>
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-4 text-sm">
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Diameter</span><span class="font-medium text-brand-ink">4,879 km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Distance</span><span class="font-medium text-brand-ink">57.9M km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Orbital Period</span><span class="font-medium text-brand-ink">88 Days</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Rotation</span><span class="font-medium text-brand-ink">58.6 Earth Days</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mb-16">
+                <div class="lg:col-span-2 premium-card p-2">
+                    <div class="aspect-square relative overflow-hidden rounded bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1614314107768-6018061b5b72?q=80&w=1000&auto=format&fit=crop" alt="Venus Render" class="object-cover w-full h-full grayscale opacity-80 mix-blend-multiply">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-xs font-bold tracking-widest text-brand-ink uppercase bg-white/80 px-3 py-1 rounded">Render Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="inline-flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 rounded-full bg-orange-300"></span>
+                        <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">Terrestrial Planet</span>
+                    </div>
+                    <h3 class="text-4xl font-bold text-brand-ink mb-4">Venus</h3>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6">
+                        Similar in size to Earth but with a severe runaway greenhouse effect. Its unique clockwise (retrograde) rotation required custom orientation logic in the Python animation script.
+                    </p>
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-4 text-sm">
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Diameter</span><span class="font-medium text-brand-ink">12,104 km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Distance</span><span class="font-medium text-brand-ink">108.2M km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Orbital Period</span><span class="font-medium text-brand-ink">224.7 Days</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Rotation</span><span class="font-medium text-brand-ink">243 Earth Days (R)</span></div>
+                    </div>
+                </div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mb-16">
@@ -89,7 +143,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="lg:col-span-3">
                     <div class="inline-flex items-center gap-2 mb-2">
                         <span class="w-2 h-2 rounded-full bg-blue-500"></span>
@@ -99,40 +152,191 @@
                     <p class="text-gray-600 font-light leading-relaxed mb-6">
                         The only known planet to harbor life, utilized as the baseline (1 Astronomical Unit) for the Python scripting logic driving the orbital mechanics of the other bodies in this simulation.
                     </p>
-                    
                     <div class="grid grid-cols-2 gap-x-8 gap-y-4 text-sm">
-                        <div class="flex justify-between border-b border-brand-border pb-2">
-                            <span class="text-gray-500">Diameter</span>
-                            <span class="font-medium text-brand-ink">12,756 km</span>
-                        </div>
-                        <div class="flex justify-between border-b border-brand-border pb-2">
-                            <span class="text-gray-500">Distance</span>
-                            <span class="font-medium text-brand-ink">149.6M km</span>
-                        </div>
-                        <div class="flex justify-between border-b border-brand-border pb-2">
-                            <span class="text-gray-500">Orbital Period</span>
-                            <span class="font-medium text-brand-ink">365.25 Days</span>
-                        </div>
-                        <div class="flex justify-between border-b border-brand-border pb-2">
-                            <span class="text-gray-500">Rotation</span>
-                            <span class="font-medium text-brand-ink">24 Hours</span>
-                        </div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Diameter</span><span class="font-medium text-brand-ink">12,756 km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Distance</span><span class="font-medium text-brand-ink">149.6M km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Orbital Period</span><span class="font-medium text-brand-ink">365.25 Days</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Rotation</span><span class="font-medium text-brand-ink">24 Hours</span></div>
                     </div>
                 </div>
             </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mb-16">
+                <div class="lg:col-span-2 premium-card p-2">
+                    <div class="aspect-square relative overflow-hidden rounded bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1614313913007-6f51f4967397?q=80&w=1000&auto=format&fit=crop" alt="Mars Render" class="object-cover w-full h-full grayscale opacity-80 mix-blend-multiply">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-xs font-bold tracking-widest text-brand-ink uppercase bg-white/80 px-3 py-1 rounded">Render Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="inline-flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 rounded-full bg-red-600"></span>
+                        <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">Terrestrial Planet</span>
+                    </div>
+                    <h3 class="text-4xl font-bold text-brand-ink mb-4">Mars</h3>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6">
+                        Known as the Red Planet due to iron oxide. Its thinner atmosphere and distinct red hue serve as a primary focus for Cycles render engine optimization in this project.
+                    </p>
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-4 text-sm">
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Diameter</span><span class="font-medium text-brand-ink">6,792 km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Distance</span><span class="font-medium text-brand-ink">227.9M km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Orbital Period</span><span class="font-medium text-brand-ink">687 Days</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Rotation</span><span class="font-medium text-brand-ink">24.6 Hours</span></div>
+                    </div>
+                </div>
             </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mb-16">
+                <div class="lg:col-span-2 premium-card p-2">
+                    <div class="aspect-square relative overflow-hidden rounded bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1000&auto=format&fit=crop" alt="Jupiter Render" class="object-cover w-full h-full grayscale opacity-80 mix-blend-multiply">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-xs font-bold tracking-widest text-brand-ink uppercase bg-white/80 px-3 py-1 rounded">Render Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="inline-flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 rounded-full bg-orange-200"></span>
+                        <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">Gas Giant</span>
+                    </div>
+                    <h3 class="text-4xl font-bold text-brand-ink mb-4">Jupiter</h3>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6">
+                        The largest planet in the Solar System. Its rapid rotation (the fastest in the simulation) created unique challenges for consistent volumetric rendering of its massive atmospheric bands.
+                    </p>
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-4 text-sm">
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Diameter</span><span class="font-medium text-brand-ink">142,984 km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Distance</span><span class="font-medium text-brand-ink">778.6M km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Orbital Period</span><span class="font-medium text-brand-ink">11.86 Earth Yrs</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Rotation</span><span class="font-medium text-brand-ink">9.9 Hours</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mb-16">
+                <div class="lg:col-span-2 premium-card p-2">
+                    <div class="aspect-square relative overflow-hidden rounded bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1614728423169-3f65fd722b7e?q=80&w=1000&auto=format&fit=crop" alt="Saturn Render" class="object-cover w-full h-full grayscale opacity-80 mix-blend-multiply">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-xs font-bold tracking-widest text-brand-ink uppercase bg-white/80 px-3 py-1 rounded">Render Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="inline-flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 rounded-full bg-yellow-100"></span>
+                        <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">Gas Giant</span>
+                    </div>
+                    <h3 class="text-4xl font-bold text-brand-ink mb-4">Saturn</h3>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6">
+                        Iconic for its complex ring system. Recreating the physics-based refraction and lighting of the individual ice particles required significant experimentation with Blender's particle systems.
+                    </p>
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-4 text-sm">
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Diameter</span><span class="font-medium text-brand-ink">120,536 km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Distance</span><span class="font-medium text-brand-ink">1.43B km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Orbital Period</span><span class="font-medium text-brand-ink">29.46 Earth Yrs</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Rotation</span><span class="font-medium text-brand-ink">10.7 Hours</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mb-16">
+                <div class="lg:col-span-2 premium-card p-2">
+                    <div class="aspect-square relative overflow-hidden rounded bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1614313912197-040b19080e7d?q=80&w=1000&auto=format&fit=crop" alt="Uranus Render" class="object-cover w-full h-full grayscale opacity-80 mix-blend-multiply">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-xs font-bold tracking-widest text-brand-ink uppercase bg-white/80 px-3 py-1 rounded">Render Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="inline-flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 rounded-full bg-blue-100"></span>
+                        <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">Ice Giant</span>
+                    </div>
+                    <h3 class="text-4xl font-bold text-brand-ink mb-4">Uranus</h3>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6">
+                        An ice giant with a distinct feature: its axis of rotation is tilted sideways. This required specific, localized scripting for axial rotation that is unique among all the planets.
+                    </p>
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-4 text-sm">
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Diameter</span><span class="font-medium text-brand-ink">51,118 km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Distance</span><span class="font-medium text-brand-ink">2.87B km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Orbital Period</span><span class="font-medium text-brand-ink">84 Earth Yrs</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Rotation</span><span class="font-medium text-brand-ink">17.2 Hours (R)</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mb-16">
+                <div class="lg:col-span-2 premium-card p-2">
+                    <div class="aspect-square relative overflow-hidden rounded bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1614314168058-2972985f4f89?q=80&w=1000&auto=format&fit=crop" alt="Neptune Render" class="object-cover w-full h-full grayscale opacity-80 mix-blend-multiply">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-xs font-bold tracking-widest text-brand-ink uppercase bg-white/80 px-3 py-1 rounded">Render Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="inline-flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 rounded-full bg-blue-700"></span>
+                        <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">Ice Giant</span>
+                    </div>
+                    <h3 class="text-4xl font-bold text-brand-ink mb-4">Neptune</h3>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6">
+                        The most distant planet from the Sun. Its deep blue color and high wind speeds are visualized using specific, animated texture layers generated within Blender's shader editor.
+                    </p>
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-4 text-sm">
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Diameter</span><span class="font-medium text-brand-ink">49,528 km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Distance</span><span class="font-medium text-brand-ink">4.5B km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Orbital Period</span><span class="font-medium text-brand-ink">164.8 Earth Yrs</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Rotation</span><span class="font-medium text-brand-ink">16.1 Hours</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mb-16">
+                <div class="lg:col-span-2 premium-card p-2">
+                    <div class="aspect-square relative overflow-hidden rounded bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1614313913007-6f51f4967397?q=80&w=1000&auto=format&fit=crop" alt="Pluto Render" class="object-cover w-full h-full grayscale opacity-80 mix-blend-multiply">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-xs font-bold tracking-widest text-brand-ink uppercase bg-white/80 px-3 py-1 rounded">Render Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="inline-flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 rounded-full bg-gray-600"></span>
+                        <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">Dwarf Planet</span>
+                    </div>
+                    <h3 class="text-4xl font-bold text-brand-ink mb-4">Pluto</h3>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6">
+                        A dwarf planet in the Kuiper belt. Its inclusion in the simulation, despite its distance, provides a key data point for testing the stability and scale of the astronomically accurate orbital scripts.
+                    </p>
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-4 text-sm">
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Diameter</span><span class="font-medium text-brand-ink">2,376 km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Distance</span><span class="font-medium text-brand-ink">5.9B km</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Orbital Period</span><span class="font-medium text-brand-ink">248 Earth Yrs</span></div>
+                        <div class="flex justify-between border-b border-brand-border pb-2"><span class="text-gray-500">Rotation</span><span class="font-medium text-brand-ink">6.4 Earth Days (R)</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <script>
+        // Updated data from established simulation data
         const planets = [
-            { name: "Mercury", ratio: 0.241 },
-            { name: "Venus", ratio: 0.615 },
-            { name: "Mars", ratio: 1.881 },
-            { name: "Jupiter", ratio: 11.86 },
-            { name: "Saturn", ratio: 29.46 },
-            { name: "Uranus", ratio: 84.01 },
-            { name: "Neptune", ratio: 164.8 },
-            { name: "Pluto", ratio: 248.0 }
+            { name: "Mercury", ratio: 0.241, periodDays: 88, distKm: 57900000 },
+            { name: "Venus", ratio: 0.615, periodDays: 224.7, distKm: 108200000 },
+            { name: "Mars", ratio: 1.881, periodDays: 687, distKm: 227900000 },
+            { name: "Jupiter", ratio: 11.86, periodDays: 4331, distKm: 778600000 },
+            { name: "Saturn", ratio: 29.46, periodDays: 10747, distKm: 1433500000 },
+            { name: "Uranus", ratio: 84.01, periodDays: 30589, distKm: 2872500000 },
+            { name: "Neptune", ratio: 164.8, periodDays: 59800, distKm: 4495100000 },
+            { name: "Pluto", ratio: 248.0, periodDays: 90560, distKm: 5906400000 }
         ];
 
         function calculatePlanetaryAge() {
@@ -146,13 +350,27 @@
 
             planets.forEach(planet => {
                 const planetaryAge = (earthAge / planet.ratio).toFixed(2);
+                const periodDaysStr = planet.periodDays.toLocaleString('en-US');
+                const distKmStr = planet.distKm.toLocaleString('en-US');
                 
                 const card = document.createElement('div');
-                card.className = "bg-white border border-brand-border rounded p-4 text-center shadow-sm hover:shadow-md transition-shadow";
+                card.className = "bg-white border border-brand-border rounded p-6 shadow-sm hover:shadow-lg transition-shadow duration-300";
                 card.innerHTML = `
-                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">${planet.name}</h4>
-                    <p class="text-2xl font-medium text-brand-ink">${planetaryAge}</p>
-                    <p class="text-xs text-brand-accent mt-1">Years old</p>
+                    <div class="mb-4">
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">${planet.name}</h4>
+                        <p class="text-4xl font-bold text-brand-ink">${planetaryAge}</p>
+                        <p class="text-sm text-brand-accent mt-1">Calculated Age (Years)</p>
+                    </div>
+                    <div class="space-y-3 text-sm border-t border-brand-border pt-4">
+                        <div class="flex justify-between">
+                            <span class="text-gray-500">Orbital Period (Days)</span>
+                            <span class="font-medium text-brand-ink">${periodDaysStr}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-500">Avg. Distance (km)</span>
+                            <span class="font-medium text-brand-ink">${distKmStr}</span>
+                        </div>
+                    </div>
                 `;
                 grid.appendChild(card);
             });
