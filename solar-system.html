@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Render | Dean</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind-theme.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src="navbar.js" defer></script>
+</head>
+<body class="antialiased relative min-h-screen flex flex-col overflow-x-hidden font-sans">
+    
+    <portfolio-nav></portfolio-nav>
+
+    <main class="flex-grow pt-32 pb-20 px-6">
+        <div class="max-w-6xl mx-auto w-full">
+            
+            <div class="mb-16 text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-3 mb-5">
+                    <span class="w-8 h-[1px] bg-brand-accent"></span>
+                    <span class="text-brand-accent text-xs font-bold uppercase tracking-widest">3D Animation & Scripting</span>
+                    <span class="w-8 h-[1px] bg-brand-accent"></span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold text-brand-ink mb-6 leading-tight tracking-tight">
+                    Solar System <span class="italic font-light text-gray-500">Render.</span>
+                </h1>
+                <p class="text-lg text-gray-600 font-light leading-relaxed">
+                    A comprehensive 3D animation created using Blender. Integrated with Python scripting to ensure astronomically accurate planetary motion, axial tilts, and orbital physics.
+                </p>
+            </div>
+
+            <div class="premium-card p-2 md:p-4 mb-16">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        title="Solar System Full Render" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+                <div class="premium-card p-8 border-t-4 border-t-brand-accent">
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Primary Tools</h3>
+                    <p class="text-xl font-medium text-brand-ink">Blender 4.0, Python</p>
+                </div>
+                <div class="premium-card p-8 border-t-4 border-t-brand-accent">
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Render Engine</h3>
+                    <p class="text-xl font-medium text-brand-ink">Cycles (Compute)</p>
+                </div>
+                <div class="premium-card p-8 border-t-4 border-t-brand-accent">
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Output Resolution</h3>
+                    <p class="text-xl font-medium text-brand-ink">1920 x 1080 (HD)</p>
+                </div>
+            </div>
+
+            <div class="premium-card p-8 md:p-12 mb-20 bg-brand-paper/50">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-brand-ink mb-3">Planetary Age Calculator</h2>
+                    <p class="text-gray-600">Enter your Earth age to calculate your orbital age across the solar system.</p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10">
+                    <input type="number" id="earthAgeInput" placeholder="Enter age in years..." class="px-6 py-3 w-full sm:w-64 border border-brand-border rounded focus:outline-none focus:border-brand-accent bg-white shadow-inner text-brand-ink">
+                    <button onclick="calculatePlanetaryAge()" class="w-full sm:w-auto px-8 py-3 bg-brand-ink text-white font-medium rounded hover:bg-brand-accent transition-colors shadow-lg">
+                        Calculate Age
+                    </button>
+                </div>
+
+                <div id="resultsGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4 hidden">
+                    </div>
+            </div>
+
+            <div class="mb-12 border-b border-brand-border pb-4">
+                <h2 class="text-3xl font-bold text-brand-ink">Celestial <span class="italic font-light text-gray-500">Bodies.</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mb-16">
+                <div class="lg:col-span-2 premium-card p-2">
+                    <div class="aspect-square relative overflow-hidden rounded bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=1000&auto=format&fit=crop" alt="Earth Render" class="object-cover w-full h-full grayscale opacity-80 mix-blend-multiply">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-xs font-bold tracking-widest text-brand-ink uppercase bg-white/80 px-3 py-1 rounded">Render Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-3">
+                    <div class="inline-flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                        <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">Habitable Zone</span>
+                    </div>
+                    <h3 class="text-4xl font-bold text-brand-ink mb-4">Earth</h3>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6">
+                        The only known planet to harbor life, utilized as the baseline (1 Astronomical Unit) for the Python scripting logic driving the orbital mechanics of the other bodies in this simulation.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-4 text-sm">
+                        <div class="flex justify-between border-b border-brand-border pb-2">
+                            <span class="text-gray-500">Diameter</span>
+                            <span class="font-medium text-brand-ink">12,756 km</span>
+                        </div>
+                        <div class="flex justify-between border-b border-brand-border pb-2">
+                            <span class="text-gray-500">Distance</span>
+                            <span class="font-medium text-brand-ink">149.6M km</span>
+                        </div>
+                        <div class="flex justify-between border-b border-brand-border pb-2">
+                            <span class="text-gray-500">Orbital Period</span>
+                            <span class="font-medium text-brand-ink">365.25 Days</span>
+                        </div>
+                        <div class="flex justify-between border-b border-brand-border pb-2">
+                            <span class="text-gray-500">Rotation</span>
+                            <span class="font-medium text-brand-ink">24 Hours</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </main>
+
+    <script>
+        const planets = [
+            { name: "Mercury", ratio: 0.241 },
+            { name: "Venus", ratio: 0.615 },
+            { name: "Mars", ratio: 1.881 },
+            { name: "Jupiter", ratio: 11.86 },
+            { name: "Saturn", ratio: 29.46 },
+            { name: "Uranus", ratio: 84.01 },
+            { name: "Neptune", ratio: 164.8 },
+            { name: "Pluto", ratio: 248.0 }
+        ];
+
+        function calculatePlanetaryAge() {
+            const earthAge = parseFloat(document.getElementById('earthAgeInput').value);
+            const grid = document.getElementById('resultsGrid');
+            
+            if (isNaN(earthAge) || earthAge <= 0) return;
+
+            grid.innerHTML = '';
+            grid.classList.remove('hidden');
+
+            planets.forEach(planet => {
+                const planetaryAge = (earthAge / planet.ratio).toFixed(2);
+                
+                const card = document.createElement('div');
+                card.className = "bg-white border border-brand-border rounded p-4 text-center shadow-sm hover:shadow-md transition-shadow";
+                card.innerHTML = `
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">${planet.name}</h4>
+                    <p class="text-2xl font-medium text-brand-ink">${planetaryAge}</p>
+                    <p class="text-xs text-brand-accent mt-1">Years old</p>
+                `;
+                grid.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>
