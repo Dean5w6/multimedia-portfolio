@@ -4,12 +4,8 @@ class PortfolioFooter extends HTMLElement {
             <footer class="mt-auto border-t border-brand-border bg-[#FDFCF8]">
                 <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     
-                    <div class="text-lg font-bold tracking-widest text-brand-ink flex items-center gap-2">
-                        DEAN<span class="text-brand-accent">.</span>
-                    </div>
-                    
                     <p class="text-sm text-gray-500 font-light text-center md:text-left">
-                        &copy; 2026 Dean. Multimedia and Authoring Portfolio &mdash; Technological University of the Philippines.
+                        &copy; 2026 Dean. Multimedia and Authoring Portfolio.
                     </p>
                     
                     <div class="flex items-center gap-4 text-sm font-medium text-gray-500">
